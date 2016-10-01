@@ -9,7 +9,7 @@ import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {HeroesComponent} from "./components/heroes/heroes.component";
 import {HeroDetailComponent} from "./components/hero-detail/hero-detail.component";
-import {HeroService} from "./components/hero-detail/services/hero.service";
+import {ProductService} from "./components/hero-detail/services/product.service";
 import {HeroSearchComponent} from "./components/hero-search/hero-search.component";
 import {routing} from "./app.routing";
 
@@ -35,7 +35,7 @@ import {routing} from "./app.routing";
     HeroesComponent
   ],
   providers: [
-    HeroService,
+    ProductService,
   ],
   bootstrap: [AppComponent]
 })

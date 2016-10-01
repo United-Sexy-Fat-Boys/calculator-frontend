@@ -1,10 +1,10 @@
 import {Injectable} from "@angular/core";
 import {Headers, Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
-import {Hero} from "./hero";
+import {Product} from "./product";
 
 @Injectable()
-export class HeroService {
+export class ProductService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private heroesUrl = 'app/heroes';  // URL to web api
@@ -12,14 +12,14 @@ export class HeroService {
   constructor(private http: Http) {
   }
 
-  getHeroes(): Promise<Hero[]> {
+  getHeroes(): Promise<Product[]> {
     return this.http.get(this.heroesUrl)
       .toPromise()
-      .then(response => response.json().data as Hero[])
+      .then(response => response.json().data as Product[])
       .catch(this.handleError);
   }
 
-  getHero(id: number): Promise<Hero> {
+  getHero(id: number): Promise<Product> {
     return this.getHeroes()
       .then(heroes => heroes.find(hero => hero.id === id));
   }
@@ -32,7 +32,7 @@ export class HeroService {
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Hero> {
+  create(name: string): Promise<Product> {
     return this.http
       .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
@@ -40,7 +40,7 @@ export class HeroService {
       .catch(this.handleError);
   }
 
-  update(hero: Hero): Promise<Hero> {
+  update(hero: Product): Promise<Product> {
     const url = `${this.heroesUrl}/${hero.id}`;
     return this.http
       .put(url, JSON.stringify(hero), {headers: this.headers})

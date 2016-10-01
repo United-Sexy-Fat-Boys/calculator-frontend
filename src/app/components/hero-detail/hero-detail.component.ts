@@ -1,8 +1,8 @@
 import {Component, OnInit} from "@angular/core";
 import {ActivatedRoute, Params} from "@angular/router";
 import {Location} from "@angular/common";
-import {Hero} from "./services/hero";
-import {HeroService} from "./services/hero.service";
+import {Product} from "./services/product";
+import {ProductService} from "./services/product.service";
 
 @Component({
   //
@@ -11,9 +11,9 @@ import {HeroService} from "./services/hero.service";
   styleUrls: ['hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-  hero: Hero;
+  hero: Product;
 
-  constructor(private heroService: HeroService,
+  constructor(private heroService: ProductService,
               private route: ActivatedRoute,
               private location: Location) {
   }
