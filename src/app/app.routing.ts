@@ -1,7 +1,7 @@
 import {ModuleWithProviders} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
-import {HeroesComponent} from "./components/heroes/heroes.component";
+import {ProductComponent} from "./components/products/products.component";
 import {ProductDetailComponent} from "./components/product-detail/product-detail.component";
 
 const appRoutes: Routes = [
@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'heroes',
-    component: HeroesComponent
+    component: ProductComponent
   }
 ];
 

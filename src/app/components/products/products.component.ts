@@ -5,20 +5,20 @@ import {ProductService} from "../product-detail/services/product.service";
 
 @Component({
   //
-  selector: 'my-heroes',
-  templateUrl: 'heroes.component.html',
-  styleUrls: ['heroes.component.css']
+  selector: 'my-products',
+  templateUrl: 'product.component.html',
+  styleUrls: ['product.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class ProductComponent implements OnInit {
   heroes: Product[];
   selectedHero: Product;
 
-  constructor(private heroService: ProductService,
+  constructor(private productService: ProductService,
               private router: Router) {
   }
 
   getHeroes(): void {
-    this.heroService
+    this.productService
       .getHeroes()
       .then(heroes => this.heroes = heroes);
   }
@@ -28,7 +28,7 @@ export class HeroesComponent implements OnInit {
     if (!name) {
       return;
     }
-    this.heroService.create(name)
+    this.productService.create(name)
       .then(hero => {
         this.heroes.push(hero);
         this.selectedHero = null;
@@ -36,7 +36,7 @@ export class HeroesComponent implements OnInit {
   }
 
   delete(hero: Product): void {
-    this.heroService
+    this.productService
       .delete(hero.id)
       .then(() => {
         this.heroes = this.heroes.filter(h => h !== hero);

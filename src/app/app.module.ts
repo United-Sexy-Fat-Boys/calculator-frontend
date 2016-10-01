@@ -7,7 +7,7 @@ import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 import {InMemoryDataService} from "./shared/in-memory-data.service";
 import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
-import {HeroesComponent} from "./components/heroes/heroes.component";
+import {ProductComponent} from "./components/products/products.component";
 import {ProductDetailComponent} from "./components/product-detail/product-detail.component";
 import {ProductService} from "./components/product-detail/services/product.service";
 import {ProductSearchComponent} from "./components/product-search/product-search.component";
@@ -27,12 +27,12 @@ import {routing} from "./app.routing";
     AppComponent,
     DashboardComponent,
     ProductDetailComponent,
-    HeroesComponent,
+    ProductComponent,
     ProductSearchComponent,
     DashboardComponent,
     ProductDetailComponent,
     ProductSearchComponent,
-    HeroesComponent
+    ProductComponent
   ],
   providers: [
     ProductService,
