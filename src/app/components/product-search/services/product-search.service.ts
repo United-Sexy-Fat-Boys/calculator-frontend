@@ -1,10 +1,10 @@
 import {Injectable} from "@angular/core";
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs";
-import {Product} from "../../hero-detail/services/product";
+import {Product} from "../../product-detail/services/product";
 
 @Injectable()
-export class HeroSearchService {
+export class ProductSearchService {
 
   constructor(private http: Http) {
   }

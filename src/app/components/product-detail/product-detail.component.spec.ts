@@ -1,10 +1,10 @@
 /* tslint:disable:no-unused-variable */
 
-import {HeroDetailComponent} from "./hero-detail.component";
+import {ProductDetailComponent} from "./product-detail.component";
 
 describe('Component: HeroDetail', () => {
   it('should create an instance', () => {
-    let component = new HeroDetailComponent();
+    let component = new ProductDetailComponent();
     expect(component).toBeTruthy();
   });
 });

@@ -6,14 +6,14 @@ import {ProductService} from "./services/product.service";
 
 @Component({
   //
-  selector: 'my-hero-detail',
-  templateUrl: 'hero-detail.component.html',
-  styleUrls: ['hero-detail.component.css']
+  selector: 'my-product-detail',
+  templateUrl: 'product-detail.component.html',
+  styleUrls: ['product-detail.component.css']
 })
-export class HeroDetailComponent implements OnInit {
+export class ProductDetailComponent implements OnInit {
   hero: Product;
 
-  constructor(private heroService: ProductService,
+  constructor(private productService: ProductService,
               private route: ActivatedRoute,
               private location: Location) {
   }
@@ -21,13 +21,13 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-      this.heroService.getHero(id)
+      this.productService.getHero(id)
         .then(hero => this.hero = hero);
     });
   }
 
   save(): void {
-    this.heroService.update(this.hero)
+    this.productService.update(this.hero)
       .then(() => this.goBack());
   }
 

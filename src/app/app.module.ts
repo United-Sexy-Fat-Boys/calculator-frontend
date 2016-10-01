@@ -8,9 +8,9 @@ import {InMemoryDataService} from "./shared/in-memory-data.service";
 import {AppComponent} from "./app.component";
 import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {HeroesComponent} from "./components/heroes/heroes.component";
-import {HeroDetailComponent} from "./components/hero-detail/hero-detail.component";
-import {ProductService} from "./components/hero-detail/services/product.service";
-import {HeroSearchComponent} from "./components/hero-search/hero-search.component";
+import {ProductDetailComponent} from "./components/product-detail/product-detail.component";
+import {ProductService} from "./components/product-detail/services/product.service";
+import {ProductSearchComponent} from "./components/product-search/product-search.component";
 import {routing} from "./app.routing";
 
 // Imports for loading & configuring the in-memory web api
@@ -26,12 +26,12 @@ import {routing} from "./app.routing";
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroDetailComponent,
+    ProductDetailComponent,
     HeroesComponent,
-    HeroSearchComponent,
+    ProductSearchComponent,
     DashboardComponent,
-    HeroDetailComponent,
-    HeroSearchComponent,
+    ProductDetailComponent,
+    ProductSearchComponent,
     HeroesComponent
   ],
   providers: [
