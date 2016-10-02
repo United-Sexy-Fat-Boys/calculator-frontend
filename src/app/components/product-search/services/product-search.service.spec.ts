@@ -3,7 +3,7 @@
 import {TestBed, inject} from "@angular/core/testing";
 import {ProductSearchService} from "./product-search.service";
 
-describe('Service: HeroSearch', () => {
+describe('Service: ProductSearch', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [ProductSearchService]

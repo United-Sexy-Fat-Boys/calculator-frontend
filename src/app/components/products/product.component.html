@@ -1,23 +1,23 @@
-<h2>My Heroes</h2>
+<h2>My Products</h2>
 <div>
-  <label>Hero name:</label> <input #heroName/>
-  <button (click)="add(heroName.value); heroName.value=''">
+  <label>Product name:</label> <input #productName/>
+  <button (click)="add(productName.value); productName.value=''">
     Add
   </button>
 </div>
-<ul class="heroes">
-  <li *ngFor="let hero of products" (click)="onSelect(hero)"
-      [class.selected]="hero === selectedProduct">
-    <span class="badge">{{hero.id}}</span>
-    <span>{{hero.name}}</span>
+<ul class="products">
+  <li *ngFor="let product of products" (click)="onSelect(product)"
+      [class.selected]="product === selectedProduct">
+    <span class="badge">{{product.id}}</span>
+    <span>{{product.name}}</span>
     <button class="delete"
-            (click)="delete(hero); $event.stopPropagation()">x
+            (click)="delete(product); $event.stopPropagation()">x
     </button>
   </li>
 </ul>
 <div *ngIf="selectedProduct">
   <h2>
-    {{selectedProduct.name | uppercase}} is my hero
+    {{selectedProduct.name | uppercase}} is my product
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
