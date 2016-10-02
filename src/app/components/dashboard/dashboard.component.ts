@@ -10,19 +10,19 @@ import {ProductService} from "../product-detail/services/product.service";
   styleUrls: ['dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Product[] = [];
+  products: Product[] = [];
 
   constructor(private router: Router,
-              private heroService: ProductService) {
+              private productService: ProductService) {
   }
 
   ngOnInit(): void {
-    this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+    this.productService.getProducts()
+      .then(product => this.products = product.slice(1, 5));
   }
 
-  gotoDetail(hero: Product): void {
-    let link = ['/detail', hero.id];
+  gotoDetail(product: Product): void {
+    let link = ['/detail', product.id];
     this.router.navigate(link);
   }
 }

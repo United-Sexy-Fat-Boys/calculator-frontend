@@ -11,7 +11,7 @@ export class ProductSearchService {
 
   search(term: string): Observable<Product[]> {
     return this.http
-      .get(`app/heroes/?name=${term}`)
+      .get(`app/products/?name=${term}`)
       .map((r: Response) => r.json().data as Product[]);
   }
 }

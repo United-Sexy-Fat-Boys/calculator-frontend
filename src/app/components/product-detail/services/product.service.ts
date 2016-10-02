@@ -7,25 +7,25 @@ import {Product} from "./product";
 export class ProductService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private heroesUrl = 'app/heroes';  // URL to web api
+  private productsUrl = 'app/products';  // URL to web api
 
   constructor(private http: Http) {
   }
 
-  getHeroes(): Promise<Product[]> {
-    return this.http.get(this.heroesUrl)
+  getProducts(): Promise<Product[]> {
+    return this.http.get(this.productsUrl)
       .toPromise()
       .then(response => response.json().data as Product[])
       .catch(this.handleError);
   }
 
-  getHero(id: number): Promise<Product> {
-    return this.getHeroes()
-      .then(heroes => heroes.find(hero => hero.id === id));
+  getProduct(id: number): Promise<Product> {
+    return this.getProducts()
+      .then(product => product.find(product => product.id === id));
   }
 
   delete(id: number): Promise<void> {
-    const url = `${this.heroesUrl}/${id}`;
+    const url = `${this.productsUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
       .then(() => null)
@@ -34,18 +34,18 @@ export class ProductService {
 
   create(name: string): Promise<Product> {
     return this.http
-      .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.productsUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);
   }
 
-  update(hero: Product): Promise<Product> {
-    const url = `${this.heroesUrl}/${hero.id}`;
+  update(product: Product): Promise<Product> {
+    const url = `${this.productsUrl}/${product.id}`;
     return this.http
-      .put(url, JSON.stringify(hero), {headers: this.headers})
+      .put(url, JSON.stringify(product), {headers: this.headers})
       .toPromise()
-      .then(() => hero)
+      .then(() => product)
       .catch(this.handleError);
   }
 

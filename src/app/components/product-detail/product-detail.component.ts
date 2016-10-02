@@ -11,7 +11,7 @@ import {ProductService} from "./services/product.service";
   styleUrls: ['product-detail.component.css']
 })
 export class ProductDetailComponent implements OnInit {
-  hero: Product;
+  product: Product;
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute,
@@ -21,13 +21,13 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.forEach((params: Params) => {
       let id = +params['id'];
-      this.productService.getHero(id)
-        .then(hero => this.hero = hero);
+      this.productService.getProduct(id)
+        .then(product => this.product = product);
     });
   }
 
   save(): void {
-    this.productService.update(this.hero)
+    this.productService.update(this.product)
       .then(() => this.goBack());
   }
 

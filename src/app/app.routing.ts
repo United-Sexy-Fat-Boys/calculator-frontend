@@ -19,7 +19,7 @@ const appRoutes: Routes = [
     component: ProductDetailComponent
   },
   {
-    path: 'heroes',
+    path: 'products',
     component: ProductComponent
   }
 ];

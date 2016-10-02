@@ -13,7 +13,7 @@ import {Product} from "../product-detail/services/product";
   providers: [ProductSearchService]
 })
 export class ProductSearchComponent implements OnInit {
-  heroes: Observable<Product[]>;
+  products: Observable<Product[]>;
   private searchTerms = new Subject<string>();
 
   constructor(private productSearchService: ProductSearchService,
@@ -26,7 +26,7 @@ export class ProductSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.heroes = this.searchTerms
+    this.products = this.searchTerms
       .debounceTime(300)        // wait for 300ms pause in events
       .distinctUntilChanged()   // ignore if next search term is same as previous
       .switchMap(term => term   // switch to new observable each time
@@ -41,8 +41,8 @@ export class ProductSearchComponent implements OnInit {
       });
   }
 
-  gotoDetail(hero: Product): void {
-    let link = ['/detail', hero.id];
+  gotoDetail(product: Product): void {
+    let link = ['/detail', product.id];
     this.router.navigate(link);
   }
 }

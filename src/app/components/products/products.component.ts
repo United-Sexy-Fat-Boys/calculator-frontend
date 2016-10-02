@@ -10,17 +10,17 @@ import {ProductService} from "../product-detail/services/product.service";
   styleUrls: ['product.component.css']
 })
 export class ProductComponent implements OnInit {
-  heroes: Product[];
-  selectedHero: Product;
+  products: Product[];
+  selectedProduct: Product;
 
   constructor(private productService: ProductService,
               private router: Router) {
   }
 
-  getHeroes(): void {
+  getProducts(): void {
     this.productService
-      .getHeroes()
-      .then(heroes => this.heroes = heroes);
+      .getProducts()
+      .then(products => this.products = products);
   }
 
   add(name: string): void {
@@ -29,32 +29,32 @@ export class ProductComponent implements OnInit {
       return;
     }
     this.productService.create(name)
-      .then(hero => {
-        this.heroes.push(hero);
-        this.selectedHero = null;
+      .then(product => {
+        this.products.push(product);
+        this.selectedProduct = null;
       });
   }
 
-  delete(hero: Product): void {
+  delete(product: Product): void {
     this.productService
-      .delete(hero.id)
+      .delete(product.id)
       .then(() => {
-        this.heroes = this.heroes.filter(h => h !== hero);
-        if (this.selectedHero === hero) {
-          this.selectedHero = null;
+        this.products = this.products.filter(h => h !== product);
+        if (this.selectedProduct === product) {
+          this.selectedProduct = null;
         }
       });
   }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.getProducts();
   }
 
-  onSelect(hero: Product): void {
-    this.selectedHero = hero;
+  onSelect(product: Product): void {
+    this.selectedProduct = product;
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedHero.id]);
+    this.router.navigate(['/detail', this.selectedProduct.id]);
   }
 }
