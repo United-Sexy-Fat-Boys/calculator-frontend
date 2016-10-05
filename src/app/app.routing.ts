@@ -1,8 +1,8 @@
 import {ModuleWithProviders} from "@angular/core";
 import {Routes, RouterModule} from "@angular/router";
-import {DashboardComponent} from "./components/dashboard/dashboard.component";
-import {ProductComponent} from "./components/products/products.component";
-import {ProductDetailComponent} from "./components/product-detail/product-detail.component";
+import {DashboardComponent} from "./components/product/dashboard/dashboard.component";
+import {ProductComponent} from "./components/product/products/products.component";
+import {ProductDetailComponent} from "./components/product/product-detail/product-detail.component";
 
 const appRoutes: Routes = [
   {
