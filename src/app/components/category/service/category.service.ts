@@ -7,7 +7,7 @@ import {Category} from "./category";
 export class CategoryService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private categoriesUrl = 'http://localhost:9090/api/categories';   // URL to web api
+  private categoriesUrl = 'app/categories';   // URL to web api
 
   constructor(private http: Http) {
   }
@@ -15,7 +15,7 @@ export class CategoryService {
   getCategories(): Promise<Category[]> {
     return this.http.get(this.categoriesUrl)
       .toPromise()
-      .then(response => response.json().content as Category[])
+      .then(response => response.json().data as Category[])
       .catch(this.handleError);
   }
 
@@ -24,7 +24,7 @@ export class CategoryService {
       .then(product => product.find(product => product.id === id));
   }
 
-  delete(id: number): Promise<void> {
+  deleteCategory(id: number): Promise<void> {
     const url = `${this.categoriesUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
@@ -32,7 +32,7 @@ export class CategoryService {
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Category> {
+  createCategory(name: string): Promise<Category> {
     return this.http
       .post(this.categoriesUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
@@ -40,7 +40,7 @@ export class CategoryService {
       .catch(this.handleError);
   }
 
-  update(category: Category): Promise<Category> {
+  updateCategory(category: Category): Promise<Category> {
     const url = `${this.categoriesUrl}/${category.id}`;
     return this.http
       .put(url, JSON.stringify(category), {headers: this.headers})

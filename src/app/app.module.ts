@@ -13,7 +13,9 @@ import {routing} from "./app.routing";
 import {CategoryComponent} from "./components/category/category.component";
 import {CategoryService} from "./components/category/service/category.service";
 import {DishComponent} from "./components/dish/dish.component";
-import {InMemoryDataService} from "./shared/in-memory-data.service";
+import {InMemoryProductsService} from "./shared/in-memory-products.service";
+import {InMemoryCategoriesService} from "./shared/in-memory/categories/in-memory-categories.service";
+
 import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 
 // Imports for loading & configuring the in-memory web api
@@ -23,7 +25,7 @@ import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryProductsService, InMemoryCategoriesService),
     routing
   ],
   declarations: [

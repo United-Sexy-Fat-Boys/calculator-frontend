@@ -21,20 +21,20 @@ export class CategoryComponent implements OnInit {
       .then(categories => this.categories = categories);
   }
 
-  add(name: string): void {
+  addCategory(name: string): void {
     name = name.trim();
     if (!name) {
       return;
     }
-    this.categoryService.create(name)
+    this.categoryService.createCategory(name)
       .then(category => {
         this.categories.push(category);
       });
   }
 
-  delete(category: Category): void {
+  deleteCategory(category: Category): void {
     this.categoryService
-      .delete(category.id)
+      .deleteCategory(category.id)
       .then(() => {
         this.categories = this.categories.filter(h => h !== category);
       });

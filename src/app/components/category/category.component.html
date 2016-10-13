@@ -11,7 +11,7 @@
     <span class="badge">{{category.id}}</span>
     <span>{{category.name}}</span>
     <button class="delete"
-            (click)="delete(category); $event.stopPropagation()">x
+            (click)="deleteCategory(category); $event.stopPropagation()">x
     </button>
   </li>
 </ul>

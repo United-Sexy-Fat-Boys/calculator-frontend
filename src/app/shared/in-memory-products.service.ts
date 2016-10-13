@@ -1,5 +1,5 @@
 import {InMemoryDbService} from "angular2-in-memory-web-api";
-export class InMemoryDataService implements InMemoryDbService {
+export class InMemoryProductsService implements InMemoryDbService {
   createDb() {
     let products = [
       {id: 11, name: 'Mr. Nice', calories: 100, categoryId: 11},
@@ -19,16 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 13, name: 'Bombasto'},
       {id: 14, name: 'Celeritas'}
     ];
-    let dishes = [
-      {},
-      {},
-      {},
-      {},
-      {},
-      {},
-      {}
-    ];
-    let parts = [];
-    return {products, categories, dishes};
+    // return {categories};
+    return {products,categories};
   }
 }
