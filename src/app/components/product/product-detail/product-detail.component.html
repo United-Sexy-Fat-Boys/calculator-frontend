@@ -6,7 +6,10 @@
   <div>
     <label>name: </label>
     <input [(ngModel)]="product.name" placeholder="name"/>
+    <br>
+    <label>calories: </label>
+    <input [(ngModel)]="product.calories" placeholder="calories"/>
   </div>
   <button (click)="goBack()">Back</button>
-  <button (click)="save()">Save</button>
+  <button (click)="saveProduct()">Save</button>
 </div>
