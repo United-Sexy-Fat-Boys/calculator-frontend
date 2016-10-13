@@ -24,7 +24,7 @@ export class ProductService {
       .then(product => product.find(product => product.id === id));
   }
 
-  delete(id: number): Promise<void> {
+  deleteProduct(id: number): Promise<void> {
     const url = `${this.productsUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
@@ -32,9 +32,9 @@ export class ProductService {
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Product> {
+  createProduct(name: string, calories: number): Promise<Product> {
     return this.http
-      .post(this.productsUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.productsUrl, JSON.stringify({name: name, calories: calories}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);

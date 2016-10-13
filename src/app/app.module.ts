@@ -12,6 +12,9 @@ import {ProductSearchComponent} from "./components/product/product-search/produc
 import {routing} from "./app.routing";
 import {CategoryComponent} from "./components/category/category.component";
 import {CategoryService} from "./components/category/service/category.service";
+import {DishComponent} from "./components/dish/dish.component";
+import {InMemoryDataService} from "./shared/in-memory-data.service";
+import {InMemoryWebApiModule} from "angular2-in-memory-web-api";
 
 // Imports for loading & configuring the in-memory web api
 
@@ -20,7 +23,7 @@ import {CategoryService} from "./components/category/service/category.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    // InMemoryWebApiModule.forRoot(InMemoryDataService),
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     routing
   ],
   declarations: [
@@ -33,7 +36,8 @@ import {CategoryService} from "./components/category/service/category.service";
     ProductDetailComponent,
     ProductSearchComponent,
     ProductComponent,
-    CategoryComponent
+    CategoryComponent,
+    DishComponent
   ],
   providers: [
     ProductService,

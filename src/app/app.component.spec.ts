@@ -12,7 +12,7 @@ describe('App: HttpTest', () => {
     });
   });
 
-  it('should create the app', async(() => {
+  it('should createProduct the app', async(() => {
     let fixture = TestBed.createComponent(AppComponent);
     let app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();

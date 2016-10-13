@@ -10,8 +10,9 @@
       [class.selected]="product === selectedProduct">
     <span class="badge">{{product.id}}</span>
     <span>{{product.name}}</span>
+    <span>{{product.calories}}</span>
     <button class="delete"
-            (click)="delete(product); $event.stopPropagation()">x
+            (click)="deleteProduct(product); $event.stopPropagation()">x
     </button>
   </li>
 </ul>

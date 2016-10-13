@@ -3,7 +3,7 @@
 import {ProductSearchComponent} from "./product-search.component";
 
 describe('Component: ProductSearch', () => {
-  it('should create an instance', () => {
+  it('should createProduct an instance', () => {
     let component = new ProductSearchComponent();
     expect(component).toBeTruthy();
   });

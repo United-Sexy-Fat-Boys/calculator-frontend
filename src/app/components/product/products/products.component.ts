@@ -23,21 +23,21 @@ export class ProductComponent implements OnInit {
       .then(products => this.products = products);
   }
 
-  add(name: string): void {
+  add(name: string, calories: number): void {
     name = name.trim();
     if (!name) {
       return;
     }
-    this.productService.create(name)
+    this.productService.createProduct(name, calories)
       .then(product => {
         this.products.push(product);
         this.selectedProduct = null;
       });
   }
 
-  delete(product: Product): void {
+  deleteProduct(product: Product): void {
     this.productService
-      .delete(product.id)
+      .deleteProduct(product.id)
       .then(() => {
         this.products = this.products.filter(h => h !== product);
         if (this.selectedProduct === product) {
