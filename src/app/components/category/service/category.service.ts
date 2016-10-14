@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Headers, Http} from "@angular/http";
 import "rxjs/add/operator/toPromise";
-import {Category} from "./category";
+import {Category} from "../../../shared/model/category/category";
 
 @Injectable()
 export class CategoryService {

@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
 import {ProductSearchService} from "./services/product-search.service";
-import {Product} from "../product-detail/services/product";
+import {Product} from "../../../shared/model/product/product";
 
 @Component({
   //

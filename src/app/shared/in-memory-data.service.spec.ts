@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import {TestBed, inject} from "@angular/core/testing";
-import {InMemoryProductsService} from "./in-memory-products.service";
+import {InMemoryDataService} from "./in-memory-data.service";
 
 describe('Service: InMemoryData', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [InMemoryProductsService]
+      providers: [InMemoryDataService]
     });
   });
 
-  it('should ...', inject([InMemoryProductsService], (service: InMemoryProductsService) => {
+  it('should ...', inject([InMemoryDataService], (service: InMemoryDataService) => {
     expect(service).toBeTruthy();
   }));
 });
